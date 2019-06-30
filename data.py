@@ -83,7 +83,7 @@ def generate_datasets():
   # do the same operations for the validation set
   dx_valid = tf.data.Dataset.from_tensor_slices(x_test).map(_parse_data)
   dy_valid = tf.data.Dataset.from_tensor_slices(y_test).map(lambda z: tf.one_hot(z, 2))
-  valid_dataset = tf.data.Dataset.zip((dx_valid, dy_valid)).batch(30)
+  valid_dataset = tf.data.Dataset.zip((dx_valid, dy_valid)).batch(len(x_test))
 
   steps_per_epoch = len(x_train) // BATCH_SIZE
 
