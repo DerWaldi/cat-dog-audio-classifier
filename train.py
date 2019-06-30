@@ -24,7 +24,7 @@ if not os.path.exists("checkpoint/"):
   os.makedirs("checkpoint/")
     
 saverCallback = keras.callbacks.ModelCheckpoint(
-    "checkpoint/{epoch:02d}-{val_loss:.2f}.hdf5", 
+    "checkpoint/{epoch:02d}.hdf5", 
     monitor='val_loss', 
     verbose=0, save_best_only=False, 
     save_weights_only=False, 
@@ -36,8 +36,3 @@ model.fit(train_dataset,
     steps_per_epoch=steps_per_epoch, 
     verbose=1, 
     callbacks=[tensorboardCallback, saverCallback])
-
-# predict
-Xnew = wav2mfcc("dataset/cats_dogs/cat_1.wav").reshape((1, 20, 11, 1))
-ynew = model.predict_classes(Xnew)
-print("cat predication:", ynew)
