@@ -1,4 +1,7 @@
 ## Overview
+This is a simple example for an audio classifier using [mfcc](https://librosa.github.io/librosa/generated/librosa.feature.mfcc.html) features and a simple cnn architecture using Keras.<br/>
+The Dataset is obtained from kaggle and is interfaced using the [Tensorflow Dataset Api](https://www.tensorflow.org/guide/datasets).<br/>
+Hyperparameters are optimized using the [HpBandSter](https://github.com/automl/HpBandSter) framework.
 
 ## Dataset
 Download and extract zip from here into the "dataset/" directory:<br/>
