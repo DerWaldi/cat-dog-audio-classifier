@@ -1,6 +1,10 @@
 
 __pycache__/
-dataset/*
+.ipynb_checkpoints/
+
+logs/
+checkpoint/
+bohb/
+
+dataset/
 !dataset/readme.md
-logs/*
-checkpoint/*
